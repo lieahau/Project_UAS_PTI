@@ -1,0 +1,59 @@
+<div class="content-container" style="min-height: 100vh;">
+    <div ng-show="isLoading">
+        <p class="text-center text-white">
+            Please wait..<br>
+            Trying to fetching all now-playing-movies data...<br>
+            It only takes time for the first time...<br>
+        </p>
+    </div>
+    <div class="row" ng-show="!isLoading">
+        <div class="col-12 header">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-search"></i></span>
+                </div>
+                <input type="text" class="form-control" placeholder="Filter Movies..." ng-model="filterText"/>
+            </div>
+        </div>
+    </div>
+    <div class="row" ng-show="!isLoading">
+        <div class="col-12">
+            <div class="list-group mx-5">
+                <div class="py-2 text-white"><i class="fa fa-video"></i> Now Playing Movies</div>
+                <span class="py-1" 
+                ng-repeat="movie in filterData = (movies | filter : {title: filterText}) | limitTo:20:20*(currentPage-1)" 
+                ui-sref="home.moviedetail({movieId: {{movie.id}}})">
+                    <a class="list-group-item bg-dark" href="">
+                        <div class="row">
+                            <div class="col-2 d-none d-md-block"><img class="img-thumbnail " alt="No Poster" ng-src="https://image.tmdb.org/t/p/original/{{movie.backdrop_path}}"/></div>
+                            <div class="col-12 col-md-8">
+                                <div class="row">
+                                    <div class="col-12 col-md-12 ml-2"><span class="text-white">Title: </span>{{movie.title}}</div>
+                                    <div class="col-12 col-md-12 ml-2"><span class="text-white">Release Date: </span>{{movie.release_date}}</div>
+                                    <div class="col-12 col-md-12 ml-2"><span class="text-white">Rating: </span>{{movie.vote_average}}/10 from {{movie.vote_count}} votes</div>
+                                </div>
+                            </div>
+                            <div class="col-2 d-none d-md-block" style="border-left: 4px solid #00ba9d;">
+                                <input class="btn-outline-info form-control my-xl-4 my-lg-3" type="submit" value="Details">
+                            </div>
+                        </div>
+                    </a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="row pagination-container" ng-show="!isLoading">
+        <div class="mx-auto pt-4">
+            <ul uib-pagination 
+            class="pagination-sm pagination paging" 
+            total-items="filterData.length" 
+            items-per-page="moviePerPage"
+            ng-model="currentPage"
+            ng-change="pageChanged()"
+            max-size="maxSize"
+            boundary-link-numbers="true" 
+            rotate="false"></ul>
+        </div>
+    </div>
+</div>
+    <!-- <span ui-sref="home.moviedetail({movieId: 1})"><a class="nav-link" href="">movie detail</a></span> -->

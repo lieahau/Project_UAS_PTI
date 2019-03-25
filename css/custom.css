@@ -1,0 +1,280 @@
+html, body{
+    font-family: 'Poiret One', cursive;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* START LOGIN */
+.login-container{
+    height: inherit;
+    font-family: 'Poiret One', cursive;
+    background-position: center top;
+    background-size: cover;
+    background-repeat: repeat;
+}
+
+#login-title, #login-subtitle{
+    font-weight: 300;
+    text-transform: capitalize;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    letter-spacing: 3px;
+    padding: auto;
+    text-align: center;
+    width: 100%;
+}
+
+.login-box, .search-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box form{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    max-width: 500px;
+    margin: 10vh 5vw;
+    padding: 2vw;
+    border: none;    
+    border-left: 4px solid #00ba9d;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 1);
+}
+
+.login-box label{
+    font-size: 16px;
+    color: #00ba9d;
+    float: left;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+
+.login-box .txt-field{
+    flex-basis: 100%;
+    margin-bottom: 1.5em;
+    clear: both;
+}
+
+.login-box input[type="text"], .login-box input[type="password"]{
+    color: #aaa;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    border: 1px solid #aaa;
+    background: transparent;
+}
+
+.login-addon-label-left, .login-addon-label-right{
+    margin: 20px 0 0;
+}
+.login-addon-label-left{
+    float: left;
+}
+.login-addon-label-right{
+    float: right;
+}
+.login-addon-label-right a{
+    font-size: 15px;
+    color: #aaa;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+.login-addon-label-right a:hover{
+    text-decoration: underline;
+}
+
+label.check {
+    float: none;
+    color: #aaa;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.login-box input[type=submit]{
+    color: white;
+    font-weight: 600;
+    width: 100%;
+	margin: auto;
+    padding: 0.7em 0;
+    margin-top: 1em;
+    font-size: .9em;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: #00ba9d;
+    border: 1px solid transparent;
+    transition: 0.5s all ease;
+}
+.login-box input[type=submit]:hover{
+    border: 1px solid #00ba9d;
+    color: #00ba9d;
+	background: transparent;
+}
+
+.invalid-form{
+    color: red;
+    font-size: 12px;
+    font-weight: 900;
+    margin-bottom: 0;
+}
+
+/* START RESPONSIVE LOGIN */
+@media(max-width:1920px) {
+    #login-title{
+        font-size: 3vw;
+    }
+    #login-subtitle{
+        font-size: 2.5vw;
+    }
+}
+
+@media(max-width:1024px) {
+    #login-title{
+        font-size: 4.5vw;
+    }
+    #login-subtitle{
+        font-size: 4vw;
+    }
+}
+
+@media(max-width:800px) {
+    #login-title{
+        font-size: 5vw;
+    }
+    #login-subtitle{
+        font-size: 4.5vw;
+    }
+}
+
+@media(max-width:480px) {
+    #login-title{
+        font-size: 2.5em;
+    }
+    #login-subtitle{
+        font-size: 2em;
+    }
+    .login-box form {
+        padding: 7.5vw;
+    }
+}
+
+@media(max-width:414px) {
+	.login-addon-label-right a, label.check {
+		letter-spacing: 1px;
+	}
+}
+
+@media(max-width:440px) {
+    #login-title{
+        font-size: 2.3em;
+    }
+    #login-subtitle{
+        font-size: 1.8em;
+    }
+}
+
+@media(max-width:384px) {
+    .login-addon-label-left, .login-addon-label-right{
+        float: none;
+        margin: 0;
+    }
+    .login-addon-label-left{
+        margin-top: 5px;
+    }
+}
+
+@media(max-width:320px) {
+    #login-title{
+        font-size: 1.8em;
+    }
+    #login-subtitle{
+        font-size: 1.3em;
+    }
+    .login-box form {
+        padding: 25px 8px;
+    }
+}
+/* END RESPONSIVE LOGIN */
+
+/* START MOVIE */
+.content-container{
+    background-image: linear-gradient(to bottom right, rgb(58, 158, 161), rgb(31, 55, 163));
+}
+.movie-container, .about-container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+.paging li a{
+    background-color: #343a40;
+    color: white;
+}
+.paging li a:hover{
+    background-color:#1d2124;
+    color: white;
+}
+
+.backdrop-container{
+    max-width: 100%;
+    max-height: 20%;
+    justify-content: center;
+}
+.backdrop-container .backdrop-image{
+    max-width: 100%;
+    max-height: 100%;
+}
+.poster-container{
+    max-width: 100%;
+    max-height: 10%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+.poster-container .poster-image{
+    max-width: 100%;
+    max-height: 400px;
+}
+/* END MOVIE */
+/* START ABOUT */
+.ref-link{
+    color: white;
+    border: none;
+    border-left: 4px solid #00ba9d;
+    border-right: 4px solid #00ba9d;
+    background-color: rgba(64, 56, 95, 0.5);
+    box-sizing: border-box;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+}
+.ref-link:hover{
+    color: rgba(255, 255, 255, 0.5);
+}
+.backdrop-container .about-image{
+    max-width: 50%;
+    max-height: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media(max-width:800px) {
+    .backdrop-container .about-image{
+        max-width: 100%;
+    }
+}
+
+/* END ABOUT */
+/* END LOGIN */

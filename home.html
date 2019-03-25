@@ -1,0 +1,28 @@
+<div class="w-100">
+    <div class="row">
+        <div class="col-12">
+            <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+                <a class="navbar-brand" href="">Movie All Stars</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <span ui-sref=".movies"><a class="nav-link" href="">Home</a></span>
+                        </li>
+                        <li class="nav-item">
+                            <span ui-sref=".about"><a class="nav-link" href="">About</a></span>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <span ui-sref="login"><a class="nav-link" href="">Logout</a></span>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<div ui-view="" style="min-height: 100%"></div>

@@ -1,0 +1,41 @@
+<div class="login-container" ng-style="{'background-image': 'url(' + bgImage + ')'}">
+    <div class="container-fluid h-100">
+        <div class="row">
+            <div class="col-12">
+                <div class="login-box">
+                    <form name="loginForm">
+                        <h1 id="login-title">Movie All Stars</h1>
+                        <h2 id="login-subtitle">Sign In</h2>
+                        <div class="form-group txt-field">
+                            <label>Username</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                </div>
+                                <input type="text" class="form-control" name="username" placeholder="Enter User Name" ng-model="username" required />
+                            </div>
+                        </div>
+                        <div class="form-group txt-field">
+                            <label>Password</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                </div>
+                                <input type="password" class="form-control" name="password" placeholder="Enter Password" id="formPasswordInput" ng-model="password" required />
+                            </div>
+                            <div class="login-addon-label-left">
+                                <input id="checkPass" name="checkPass" type="checkbox" value="show password" ng-click="showPassword()">
+                                <label class="check" for="checkPass">Show password</label>
+                            </div>
+                            <div class="login-addon-label-right">
+                                <a href="#" ng-click="resetForm()">Reset</a>
+                            </div>
+                        </div>
+                        <input type="submit" value="SIGN IN" ng-click="loginFormSubmit()">
+                        <p class="invalid-form" ng-show="isInvalid">No User exist / Wrong Combination of User & Password</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

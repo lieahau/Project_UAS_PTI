@@ -1,0 +1,49 @@
+<div class="content-container" style="min-height: 100vh;">
+    <div ng-show="isLoading">
+        <p class="text-center text-white">
+            Please wait..<br>
+            Trying to fetching movie data...<br>
+        </p>
+    </div>
+    <div class="row text-white" ng-show="!isLoading">
+        <div class="col-10 mx-auto">
+            <div class="movie-container bg-dark">
+                <div class="backdrop-container mx-3 py-3">
+                    <img class="backdrop-image" ng-show="hasImage==0" ng-src="{{backdropPath}}" alt="No Image">
+                </div>
+                <div class="poster-container mx-2">
+                    <img class="mx-auto poster-image" ng-show="hasImage==1" ng-src="{{posterPath}}" alt="No Image">
+                    <p class="text-center" ng-show="hasImage==2">This movie has no image to display.<br><br></p>
+                </div>
+                <div class="content mx-3 py-3">
+                    <p>
+                        Title: {{movieData.title}}<br>
+                        Tagline: 
+                        <span ng-show="hasTagline">{{movieData.tagline}}</span>
+                        <span ng-show="!hasTagline">No tagline information to be shown</span>
+                        <br>
+                        Genre: 
+                        <span ng-show="hasGenres">{{movieData.genres[0].name}}<span ng-repeat="genre in movieData.genres | limitTo: (1 - movieData.genres.length)">, {{genre.name}}</span></span>
+                        <span ng-show="!hasGenres">No genre information to be shown.</span>
+                        <br>
+                        Release Date: {{movieData.release_date}}<br>
+                        Rating: {{movieData.vote_average}} / 10 from {{movieData.vote_count}} votes
+                        <br><br>
+                        Description: <span ng-show="!hasOverview">No description information to be shown.</span>
+                        <br><span ng-show="hasOverview" class="text-justify">{{movieData.overview}}<br></span>
+                        <br>
+                        Budget: {{movieData.budget}}<br>
+                        Production: 
+                        <span ng-show="hasProduction">{{movieData.production_companies[0].name}}<span ng-repeat="company in movieData.production_companies | limitTo: (1 - movieData.production_companies.length)">, {{company.name}}</span></span>
+                        <span ng-show="!hasProduction">No company information to be shown.</span>
+                        <br>
+                        Website: 
+                        <span ng-show="hasWebsite"><a ng-href="{{movieData.homepage}}" target="_blank">{{movieData.homepage}}</a></span>
+                        <span ng-show="!hasWebsite">No website information to be shown.</span>
+                        
+                    </p>
+                </div>
+            </div>
+       </div>
+   </div>
+</div>
